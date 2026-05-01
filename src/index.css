@@ -1,0 +1,29 @@
+@import "tailwindcss";
+
+@theme {
+  /* Catwork Color Palette — warm, playful, modern */
+
+  /* Primary: beige tones */
+  --color-beige-100: #FDFBF7;
+  --color-beige-200: #F5F0EB;
+  --color-beige-300: #E8DDD3;
+  --color-beige-400: #D4C5B5;
+
+  /* Accent warm: terracotta / coral */
+  --color-terracotta: #C17C5E;
+  --color-coral: #E8956A;
+
+  /* Accent playful */
+  --color-pink: #E8A0BF;
+  --color-sage: #A8C5A0;
+
+  /* Dark: warm charcoal */
+  --color-charcoal: #3D3229;
+
+  /* Light: cream white */
+  --color-cream: #FDFBF7;
+
+  /* Font families */
+  --font-heading: 'DM Serif Display', Georgia, serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+}
