@@ -117,7 +117,7 @@ Implementación del sitio web de Catwork, un espacio de coworking y cafetería c
     - _Requisitos: 4.2, 4.5_
 
 - [x] 6. Implementar módulo de espacios, membresías y reservaciones
-  - [~] 6.1 Crear páginas de espacios y membresías
+  - [x] 6.1 Crear páginas de espacios y membresías
     - Crear `src/services/spaces.ts` con funciones para obtener espacios y disponibilidad desde Supabase
     - Implementar componente `SpaceCard`: foto, nombre, descripción, capacidad, amenidades
     - Implementar `SpacesPage`: información del Bullpen (20 lugares), 2 Cabinas Insonorizadas y Sala de Juntas con fotos y descripciones
@@ -127,7 +127,7 @@ Implementación del sitio web de Catwork, un espacio de coworking y cafetería c
     - Incluir flujo de registro/contacto al seleccionar una membresía
     - _Requisitos: 5.1, 5.2, 5.8, 6.1, 6.2, 6.3, 6.4, 6.5, 12.1, 12.2_
 
-  - [~] 6.2 Implementar sistema de autenticación y reservaciones
+  - [x] 6.2 Implementar sistema de autenticación y reservaciones
     - Configurar Supabase Auth con email/contraseña
     - Crear `src/services/reservations.ts` con funciones para crear, obtener y verificar disponibilidad de reservaciones
     - Implementar `ReservationsPage`: selector de espacio, fecha y horario con verificación de disponibilidad en tiempo real

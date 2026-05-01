@@ -2,12 +2,13 @@ import { useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
 
 const NTFY_TOPIC = 'catwork-visits'
-const NTFY_URL = `https://ntfy.sh/${NTFY_TOPIC}`
+const NTFY_URL = `https://ntfy.sh`
 
 /**
  * Sends a notification to ntfy.sh on every page view.
- * Fire-and-forget — errors are silently ignored so they
- * never affect the user experience.
+ * Uses JSON body format to avoid CORS preflight issues
+ * with custom headers in the browser.
+ * Fire-and-forget — errors are logged but never affect UX.
  */
 export function usePageViewNotify() {
   const location = useLocation()
@@ -20,13 +21,14 @@ export function usePageViewNotify() {
 
     fetch(NTFY_URL, {
       method: 'POST',
-      headers: {
-        Title: '🐱 Visita en Catwork',
-        Tags: 'cat,eyes',
-      },
-      body: `Alguien visitó ${page} — ${timestamp}`,
-    }).catch(() => {
-      // Silently ignore — ntfy notifications should never break the site
+      body: JSON.stringify({
+        topic: NTFY_TOPIC,
+        title: 'Visita en Catwork',
+        message: `Alguien visito ${page} - ${timestamp}`,
+        tags: ['cat', 'eyes'],
+      }),
+    }).catch((err) => {
+      console.warn('ntfy notification failed:', err)
     })
   }, [location.pathname])
 }

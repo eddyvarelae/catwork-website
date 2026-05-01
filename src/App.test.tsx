@@ -45,12 +45,12 @@ describe('App', () => {
 
   it('renders the SpacesPage at /espacios', async () => {
     renderWithRouter('/espacios')
-    expect(await screen.findByText('SpacesPage')).toBeInTheDocument()
+    expect(await screen.findByText('Nuestros Espacios')).toBeInTheDocument()
   })
 
   it('renders the MembershipsPage at /membresias', async () => {
     renderWithRouter('/membresias')
-    expect(await screen.findByText('MembershipsPage')).toBeInTheDocument()
+    expect(await screen.findByText('Planes y Precios')).toBeInTheDocument()
   })
 
   it('renders the ShopPage at /tienda', async () => {
